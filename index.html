@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate unique game names for RPG, Fantasy, FPS characters, clans and teams. Free online game name generator with multiple categories.">
+    <meta name="keywords" content="game name generator, fantasy name generator, RPG names, gaming nicknames, clan names, character names">
+    <meta name="author" content="Game Name Generator">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Game Name Generator - Create Unique Gaming Names">
+    <meta property="og:description" content="Generate unique game names for RPG, Fantasy, FPS characters, clans and teams. Free online game name generator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gamenamegen.com">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Game Name Generator",
+        "description": "Generate unique game names for RPG, Fantasy, FPS characters, clans and teams",
+        "url": "https://gamenamegen.com",
+        "mainEntity": {
+            "@type": "SoftwareApplication",
+            "name": "Game Name Generator",
+            "applicationCategory": "WebApplication",
+            "description": "Free online tool to generate unique gaming names"
+        }
+    }
+    </script>
+    
+    <title>Game Name Generator - Create Unique Gaming Names | Free Online Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+            to { box-shadow: 0 0 30px rgba(139, 92, 246, 0.6), 0 0 40px rgba(139, 92, 246, 0.3); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .name-card {
+            transition: all 0.3s ease;
+        }
+        .name-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .bg-primary { background-color: #8B5CF6; }
+        .bg-secondary { background-color: #06D6A0; }
+        .bg-accent { background-color: #FF6B6B; }
+        .bg-warning { background-color: #FFD93D; }
+        .text-primary { color: #8B5CF6; }
+        .text-secondary { color: #06D6A0; }
+        .text-accent { color: #FF6B6B; }
+        .border-primary { border-color: #8B5CF6; }
+        .from-primary { --tw-gradient-from: #8B5CF6; }
+        .to-primary { --tw-gradient-to: #8B5CF6; }
+        .from-secondary { --tw-gradient-from: #06D6A0; }
+        .to-secondary { --tw-gradient-to: #06D6A0; }
+        .from-accent { --tw-gradient-from: #FF6B6B; }
+        .to-accent { --tw-gradient-to: #FF6B6B; }
+        .from-warning { --tw-gradient-from: #FFD93D; }
+        .to-warning { --tw-gradient-to: #FFD93D; }
+        .animate-fade-in { animation: fadeIn 0.5s ease-in-out; }
+        .animate-slide-up { animation: slideUp 0.6s ease-out; }
+        .animate-bounce-in { animation: bounceIn 0.8s ease-out; }
+        .animate-glow { animation: glow 2s ease-in-out infinite alternate; }
+        .animate-pulse-gentle { animation: pulse 2s ease-in-out infinite; }
+        
+        .keyword-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .keyword-input:focus {
+            border-color: #8B5CF6;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+            outline: none;
+        }
+        .keyword-tag {
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            transition: all 0.2s ease;
+        }
+        .keyword-tag:hover {
+            background: rgba(139, 92, 246, 0.3);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- Header -->
+    <header class="glass-effect border-b border-white/20">
+        <div class="container mx-auto px-4 py-6">
+            <nav class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">GN</span>
+                    </div>
+                    <h1 class="text-2xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                        Game Name Generator
+                    </h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="hover:text-secondary transition-colors">Home</a>
+                    <a href="#keyword-generator" class="hover:text-secondary transition-colors">Keyword Generator</a>
+                    <a href="#generators" class="hover:text-secondary transition-colors">Categories</a>
+                    <a href="#about" class="hover:text-secondary transition-colors">About</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
+                <span class="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
+                    Epic Game Names
+                </span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-blue-100 animate-fade-in max-w-3xl mx-auto">
+                Generate unique, memorable names for your gaming characters, clans, and teams. 
+                Choose from multiple categories or use keywords to create the perfect identity for your gaming adventure.
+            </p>
+            
+            <!-- Quick Generate Button -->
+            <button id="quickGenerate" class="bg-gradient-to-r from-primary to-purple-600 hover:from-purple-600 hover:to-primary text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 animate-glow mb-12">
+                🎮 Generate Names Now
+            </button>
+
+            <!-- Quick Generated Names Display -->
+            <div id="quickResults" class="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto mb-12"></div>
+        </div>
+    </section>
+
+    <!-- Keyword Generator Section -->
+    <section id="keyword-generator" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                    🔍 Keyword-Based Name Generator
+                </h2>
+                <p class="text-center text-blue-100 mb-8 text-lg">
+                    Enter keywords that describe your character, style, or theme, and we'll generate personalized names for you!
+                </p>
+                
+                <div class="glass-effect rounded-2xl p-8">
+                    <!-- Keyword Input Section -->
+                    <div class="mb-6">
+                        <label class="block text-lg font-semibold mb-3 text-blue-100">Enter Your Keywords:</label>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <input 
+                                type="text" 
+                                id="keywordInput" 
+                                class="keyword-input flex-1 min-w-64 px-4 py-3 rounded-xl text-white placeholder-blue-200"
+                                placeholder="e.g., dragon, shadow, warrior, fire..."
+                                maxlength="50"
+                            >
+                            <button id="addKeyword" class="bg-gradient-to-r from-secondary to-green-600 hover:from-green-600 hover:to-secondary text-white font-bold px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105">
+                                + Add
+                            </button>
+                        </div>
+                        
+                        <!-- Keywords Display -->
+                        <div id="keywordTags" class="flex flex-wrap gap-2 mb-4 min-h-8"></div>
+                        
+                        <!-- Suggested Keywords -->
+                        <div class="mb-4">
+                            <p class="text-sm text-blue-200 mb-2">Popular keywords:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="suggested-keyword cursor-pointer text-xs bg-white bg-opacity-10 hover:bg-opacity-20 px-3 py-1 rounded-full transition-all">dragon</span>
+                                <span class="suggested-keyword cursor-pointer text-xs bg-white bg-opacity-10 hover:bg-opacity-20 px-3 py-1 rounded-full transition-all">shadow</span>
+                                <span class="suggested-keyword cursor-pointer text-xs bg-white bg-opacity-10 hover:bg-opacity-20 px-3 py-1 rounded-full transition-all">fire</span>
+                                <span class="suggested-keyword cursor-pointer text-xs bg-white bg-opacity-10 hover:bg-opacity-20 px-3 py-1 rounded-full transition-all">ice</span>
+                                <span class="suggested-keyword cursor-pointer text-xs bg-white bg-opacity-10 hover:bg-opacity-20 px-3 py-1 rounded-full transition-all">warrior</span>
+                                <span class="suggested-keyword cursor-pointer text-xs bg-white bg-opacity-10 hover:bg-opacity-20 px-3 py-1 rounded-full transition-all">mystic</span>
+                                <span class="suggested-keyword cursor-pointer text-xs bg-white bg-opacity-10 hover:bg-opacity-20 px-3 py-1 rounded-full transition-all">storm</span>
+                                <span class="suggested-keyword cursor-pointer text-xs bg-white bg-opacity-10 hover:bg-opacity-20 px-3 py-1 rounded-full transition-all">blade</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Generate Button -->
+                    <div class="text-center mb-6">
+                        <button id="generateKeywordNames" class="bg-gradient-to-r from-warning to-orange-500 hover:from-orange-500 hover:to-warning text-black font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 animate-pulse-gentle disabled:opacity-50 disabled:cursor-not-allowed">
+                            ✨ Generate Names with Keywords
+                        </button>
+                        <p class="text-sm text-blue-200 mt-2">Add at least one keyword to generate names</p>
+                    </div>
+                    
+                    <!-- Results -->
+                    <div id="keywordResults" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+                    
+                    <!-- Copy All Button for Keyword Results -->
+                    <div id="keywordCopySection" class="text-center mt-6 hidden">
+                        <button id="copyKeywordNames" class="bg-gradient-to-r from-accent to-pink-600 hover:from-pink-600 hover:to-accent text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
+                            📋 Copy All Names
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="generators" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                Choose Your Generator
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Fantasy Generator -->
+                <div class="category-card glass-effect rounded-2xl p-8 text-center cursor-pointer transform transition-all duration-300 hover:scale-105" data-category="fantasy">
+                    <div class="text-6xl mb-4">🏰</div>
+                    <h3 class="text-2xl font-bold mb-3">Fantasy Names</h3>
+                    <p class="text-blue-100 mb-4">Mystical names for RPG characters, wizards, and fantasy worlds</p>
+                    <div class="text-sm text-blue-200">Click to generate →</div>
+                </div>
+
+                <!-- FPS Generator -->
+                <div class="category-card glass-effect rounded-2xl p-8 text-center cursor-pointer transform transition-all duration-300 hover:scale-105" data-category="fps">
+                    <div class="text-6xl mb-4">🔫</div>
+                    <h3 class="text-2xl font-bold mb-3">FPS Gamer Tags</h3>
+                    <p class="text-blue-100 mb-4">Cool names for FPS games, tactical shooters, and competitive gaming</p>
+                    <div class="text-sm text-blue-200">Click to generate →</div>
+                </div>
+
+                <!-- Clan Generator -->
+                <div class="category-card glass-effect rounded-2xl p-8 text-center cursor-pointer transform transition-all duration-300 hover:scale-105" data-category="clan">
+                    <div class="text-6xl mb-4">⚔️</div>
+                    <h3 class="text-2xl font-bold mb-3">Clan Names</h3>
+                    <p class="text-blue-100 mb-4">Powerful names for gaming clans, guilds, and teams</p>
+                    <div class="text-sm text-blue-200">Click to generate →</div>
+                </div>
+
+                <!-- Female Generator -->
+                <div class="category-card glass-effect rounded-2xl p-8 text-center cursor-pointer transform transition-all duration-300 hover:scale-105" data-category="female">
+                    <div class="text-6xl mb-4">👑</div>
+                    <h3 class="text-2xl font-bold mb-3">Female Characters</h3>
+                    <p class="text-blue-100 mb-4">Beautiful names for female gaming characters and avatars</p>
+                    <div class="text-sm text-blue-200">Click to generate →</div>
+                </div>
+
+                <!-- Funny Generator -->
+                <div class="category-card glass-effect rounded-2xl p-8 text-center cursor-pointer transform transition-all duration-300 hover:scale-105" data-category="funny">
+                    <div class="text-6xl mb-4">😄</div>
+                    <h3 class="text-2xl font-bold mb-3">Funny Names</h3>
+                    <p class="text-blue-100 mb-4">Hilarious and quirky names for casual gaming fun</p>
+                    <div class="text-sm text-blue-200">Click to generate →</div>
+                </div>
+
+                <!-- Sci-Fi Generator -->
+                <div class="category-card glass-effect rounded-2xl p-8 text-center cursor-pointer transform transition-all duration-300 hover:scale-105" data-category="scifi">
+                    <div class="text-6xl mb-4">🚀</div>
+                    <h3 class="text-2xl font-bold mb-3">Sci-Fi Names</h3>
+                    <p class="text-blue-100 mb-4">Futuristic names for space games and cyberpunk characters</p>
+                    <div class="text-sm text-blue-200">Click to generate →</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Generator Modal -->
+    <div id="generatorModal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+        <div class="glass-effect rounded-3xl p-8 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="modalTitle" class="text-3xl font-bold"></h2>
+                <button id="closeModal" class="text-3xl hover:text-accent transition-colors">&times;</button>
+            </div>
+            
+            <p id="modalDescription" class="text-blue-100 mb-6 text-lg"></p>
+            
+            <div class="flex flex-wrap gap-4 mb-6">
+                <button id="generateMore" class="bg-gradient-to-r from-secondary to-green-600 hover:from-green-600 hover:to-secondary text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
+                    🎲 Generate More Names
+                </button>
+                <button id="copyAll" class="bg-gradient-to-r from-accent to-pink-600 hover:from-pink-600 hover:to-accent text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
+                    📋 Copy All Names
+                </button>
+            </div>
+            
+            <div id="modalResults" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                    About Game Name Generator
+                </h2>
+                <div class="glass-effect rounded-2xl p-8">
+                    <p class="text-lg text-blue-100 mb-6">
+                        Our Game Name Generator helps millions of gamers worldwide create unique, memorable names for their gaming adventures. 
+                        Whether you're creating a new character in an RPG, forming a competitive esports team, or just need a cool gamertag, 
+                        we've got you covered.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+                        <div class="text-center">
+                            <div class="text-3xl mb-2">⚡</div>
+                            <h3 class="font-bold mb-2">Instant Generation</h3>
+                            <p class="text-blue-200">Generate hundreds of names in seconds</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl mb-2">🎯</div>
+                            <h3 class="font-bold mb-2">Multiple Categories</h3>
+                            <p class="text-blue-200">Specialized generators for every gaming genre</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl mb-2">🔍</div>
+                            <h3 class="font-bold mb-2">Keyword-Based</h3>
+                            <p class="text-blue-200">Generate names based on your keywords</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl mb-2">💝</div>
+                            <h3 class="font-bold mb-2">Completely Free</h3>
+                            <p class="text-blue-200">No registration or payment required</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass-effect border-t border-white/20 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-blue-200 mb-4">© 2025 Game Name Generator. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-blue-200 hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="text-blue-200 hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="text-blue-200 hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Name generation data
+        const nameData = {
+            fantasy: {
+                title: "Fantasy Name Generator",
+                description: "Generate mystical and enchanting names perfect for RPG characters, fantasy worlds, and magical adventures.",
+                prefixes: ["Ae", "El", "Thal", "Gor", "Mira", "Zan", "Kael", "Vor", "Dra", "Syl", "Nym", "Tha", "Vel", "Zar", "Lyr"],
+                roots: ["dor", "reth", "mir", "vax", "quar", "thon", "grim", "bane", "fire", "wind", "star", "moon", "stone", "blade", "shadow"],
+                suffixes: ["ion", "ael", "ar", "eth", "ius", "andra", "wyn", "thor", "grim", "is", "on", "en", "us", "ia", "el"]
+            },
+            fps: {
+                title: "FPS Gamer Tag Generator",
+                description: "Create awesome gamer tags perfect for first-person shooters, competitive gaming, and tactical gameplay.",
+                prefixes: ["Dark", "Silent", "Rapid", "Stealth", "Ghost", "Shadow", "Viper", "Storm", "Razor", "Cyber", "Neon", "Elite", "Alpha", "Omega", "Phantom"],
+                roots: ["Strike", "Shot", "Kill", "Snipe", "Blast", "Fire", "Storm", "Rage", "Hunt", "Wolf", "Hawk", "Eagle", "Tiger", "Dragon", "Venom"],
+                suffixes: ["X", "Z", "Pro", "Elite", "Max", "Prime", "Alpha", "Beta", "Core", "Edge", "Force", "Power", "Fury", "Blaze", "Storm"]
+            },
+            clan: {
+                title: "Clan Name Generator",
+                description: "Generate powerful and memorable names for gaming clans, guilds, teams, and competitive groups.",
+                prefixes: ["Crimson", "Shadow", "Iron", "Storm", "Fire", "Ice", "Blood", "Dark", "Golden", "Silver", "Royal", "Elite", "Ancient", "Mystic", "Sacred"],
+                roots: ["Legion", "Order", "Brotherhood", "Alliance", "Empire", "Kingdom", "Clan", "Guild", "Society", "Council", "Circle", "Syndicate", "Union", "Coalition", "Dynasty"],
+                suffixes: ["of Power", "of Honor", "of Glory", "of Victory", "of Legend", "of Destiny", "of Champions", "of Warriors", "of Heroes", "of Kings", "of Dragons", "of Shadows", "of Fire", "of Steel", "of Magic"]
+            },
+            female: {
+                title: "Female Character Name Generator",
+                description: "Beautiful and strong names perfect for female gaming characters, avatars, and heroines.",
+                prefixes: ["Aria", "Luna", "Sera", "Nova", "Zara", "Lyra", "Vera", "Mira", "Kira", "Ella", "Nora", "Cora", "Lila", "Maya", "Ava"],
+                roots: ["belle", "star", "moon", "rose", "grace", "hope", "joy", "wise", "brave", "strong", "light", "dawn", "sky", "dream", "heart"],
+                suffixes: ["lyn", "beth", "anna", "ella", "ina", "ara", "lia", "wyn", "rose", "jade", "sage", "faye", "hope", "grace", "star"]
+            },
+            funny: {
+                title: "Funny Name Generator",
+                description: "Hilarious and quirky names that will make your gaming sessions more fun and memorable.",
+                prefixes: ["Sir", "Captain", "Lord", "Master", "Doctor", "Professor", "Admiral", "General", "Chief", "King", "Queen", "Princess", "Duke", "Baron", "Count"],
+                roots: ["Pickles", "Banana", "Cheese", "Noodle", "Waffle", "Potato", "Cookie", "Burger", "Pizza", "Taco", "Muffin", "Pancake", "Donut", "Bacon", "Chicken"],
+                suffixes: ["Face", "Head", "Nose", "Pants", "Shoes", "Hat", "Beard", "Hair", "Eyes", "Mouth", "Belly", "Foot", "Hand", "Ear", "Tooth"]
+            },
+            scifi: {
+                title: "Sci-Fi Name Generator",
+                description: "Futuristic and technological names perfect for space games, cyberpunk settings, and sci-fi adventures.",
+                prefixes: ["Cyber", "Neo", "Quantum", "Vector", "Matrix", "Digital", "Binary", "Tech", "Nano", "Meta", "Ultra", "Hyper", "Proto", "Synth", "Void"],
+                roots: ["core", "byte", "node", "link", "flux", "pulse", "wave", "grid", "net", "sync", "code", "data", "stream", "ghost", "echo"],
+                suffixes: ["X1", "2077", "Prime", "Beta", "Alpha", "Core", "Net", "Sync", "Link", "Node", "Tech", "Sys", "Bot", "AI", "Zero"]
+            }
+        };
+
+        // Keyword-based name generation data
+        const keywordMappings = {
+            // Nature & Elements
+            'dragon': { prefixes: ['Dra', 'Wyr', 'Drag', 'Scal'], roots: ['gon', 'vern', 'drake', 'fyre'], suffixes: ['claw', 'wing', 'fire', 'rage'] },
+            'fire': { prefixes: ['Igni', 'Pyr', 'Blaze', 'Flam'], roots: ['fire', 'flame', 'burn', 'heat'], suffixes: ['born', 'heart', 'soul', 'fury'] },
+            'ice': { prefixes: ['Cryo', 'Glaci', 'Frost', 'Chill'], roots: ['ice', 'frost', 'freeze', 'shard'], suffixes: ['born', 'walker', 'heart', 'blade'] },
+            'shadow': { prefixes: ['Shad', 'Dark', 'Umbr', 'Noir'], roots: ['shadow', 'shade', 'dark', 'void'], suffixes: ['walker', 'born', 'bane', 'cloak'] },
+            'storm': { prefixes: ['Temp', 'Thund', 'Light', 'Storm'], roots: ['storm', 'thunder', 'bolt', 'gale'], suffixes: ['born', 'rider', 'caller', 'lord'] },
+            'moon': { prefixes: ['Lun', 'Selene', 'Nyx', 'Celes'], roots: ['moon', 'lunar', 'night', 'star'], suffixes: ['born', 'touched', 'blessed', 'walker'] },
+            'star': { prefixes: ['Astro', 'Stell', 'Celes', 'Nova'], roots: ['star', 'stellar', 'cosmic', 'nebula'], suffixes: ['born', 'touched', 'walker', 'light'] },
+            'wind': { prefixes: ['Aer', 'Gust', 'Zeph', 'Cycl'], roots: ['wind', 'breeze', 'gale', 'zephyr'], suffixes: ['walker', 'rider', 'born', 'song'] },
+            'earth': { prefixes: ['Terr', 'Gaia', 'Stone', 'Rock'], roots: ['earth', 'stone', 'rock', 'crystal'], suffixes: ['born', 'heart', 'shield', 'guard'] },
+            'ocean': { prefixes: ['Aqua', 'Nept', 'Tidal', 'Deep'], roots: ['ocean', 'wave', 'sea', 'tide'], suffixes: ['born', 'walker', 'lord', 'heart'] },
+            
+            // Combat & Weapons
+            'warrior': { prefixes: ['War', 'Batt', 'Fight', 'Valor'], roots: ['warrior', 'battle', 'fight', 'combat'], suffixes: ['born', 'heart', 'soul', 'bane'] },
+            'sword': { prefixes: ['Blade', 'Steel', 'Sharp', 'Cut'], roots: ['sword', 'blade', 'steel', 'edge'], suffixes: ['master', 'born', 'wielder', 'bane'] },
+            'blade': { prefixes: ['Sharp', 'Steel', 'Razor', 'Cut'], roots: ['blade', 'edge', 'steel', 'razor'], suffixes: ['master', 'born', 'dancer', 'song'] },
+            'bow': { prefixes: ['Arch', 'Hunt', 'Mark', 'True'], roots: ['bow', 'arrow', 'hunt', 'mark'], suffixes: ['shot', 'eye', 'master', 'born'] },
+            'shield': { prefixes: ['Guard', 'Def', 'Prot', 'Wall'], roots: ['shield', 'guard', 'wall', 'fortress'], suffixes: ['born', 'bearer', 'heart', 'master'] },
+            'axe': { prefixes: ['Cleav', 'Chop', 'Split', 'Hack'], roots: ['axe', 'cleaver', 'chop', 'split'], suffixes: ['born', 'wielder', 'master', 'fury'] },
+            
+            // Mystical & Magic
+            'magic': { prefixes: ['Myst', 'Arch', 'Spell', 'Ench'], roots: ['magic', 'spell', 'mystic', 'arcane'], suffixes: ['born', 'weaver', 'touched', 'heart'] },
+            'wizard': { prefixes: ['Arch', 'Grand', 'High', 'Elder'], roots: ['wizard', 'mage', 'sage', 'mystic'], suffixes: ['born', 'touched', 'heart', 'soul'] },
+            'crystal': { prefixes: ['Cryst', 'Gem', 'Prism', 'Shard'], roots: ['crystal', 'gem', 'prism', 'shard'], suffixes: ['born', 'heart', 'touched', 'keeper'] },
+            'rune': { prefixes: ['Run', 'Glyph', 'Mark', 'Sign'], roots: ['rune', 'glyph', 'mark', 'sigil'], suffixes: ['born', 'keeper', 'master', 'scribe'] },
+            'potion': { prefixes: ['Brew', 'Mix', 'Herb', 'Alch'], roots: ['potion', 'brew', 'elixir', 'tonic'], suffixes: ['master', 'maker', 'born', 'keeper'] },
+            
+            // Animals & Creatures
+            'wolf': { prefixes: ['Lup', 'Fang', 'Howl', 'Pack'], roots: ['wolf', 'fang', 'howl', 'pack'], suffixes: ['born', 'heart', 'soul', 'runner'] },
+            'eagle': { prefixes: ['Aqu', 'Wing', 'Soar', 'Sky'], roots: ['eagle', 'wing', 'talon', 'sky'], suffixes: ['born', 'eye', 'heart', 'soar'] },
+            'tiger': { prefixes: ['Tig', 'Stripe', 'Claw', 'Stalk'], roots: ['tiger', 'stripe', 'claw', 'hunt'], suffixes: ['born', 'heart', 'soul', 'eye'] },
+            'bear': { prefixes: ['Urs', 'Claw', 'Roar', 'Might'], roots: ['bear', 'claw', 'roar', 'fury'], suffixes: ['born', 'heart', 'soul', 'strength'] },
+            'raven': { prefixes: ['Corv', 'Black', 'Dark', 'Wing'], roots: ['raven', 'crow', 'wing', 'flight'], suffixes: ['born', 'wing', 'heart', 'eye'] },
+            'spider': { prefixes: ['Arach', 'Web', 'Silk', 'Venom'], roots: ['spider', 'web', 'silk', 'weave'], suffixes: ['born', 'weaver', 'heart', 'touch'] },
+            
+            // Colors
+            'red': { prefixes: ['Crim', 'Scar', 'Ruby', 'Rust'], roots: ['red', 'crimson', 'scarlet', 'ruby'], suffixes: ['born', 'heart', 'soul', 'flame'] },
+            'blue': { prefixes: ['Azur', 'Sapp', 'Cobalt', 'Navy'], roots: ['blue', 'azure', 'sapphire', 'cobalt'], suffixes: ['born', 'heart', 'soul', 'wave'] },
+            'green': { prefixes: ['Verd', 'Jade', 'Emer', 'Mint'], roots: ['green', 'jade', 'emerald', 'forest'], suffixes: ['born', 'heart', 'soul', 'leaf'] },
+            'black': { prefixes: ['Nig', 'Ebon', 'Obsid', 'Void'], roots: ['black', 'ebony', 'obsidian', 'void'], suffixes: ['born', 'heart', 'soul', 'shadow'] },
+            'white': { prefixes: ['Alb', 'Ivory', 'Pearl', 'Snow'], roots: ['white', 'ivory', 'pearl', 'snow'], suffixes: ['born', 'heart', 'soul', 'light'] },
+            'gold': { prefixes: ['Aur', 'Gilt', 'Shin', 'Lust'], roots: ['gold', 'golden', 'gilt', 'shine'], suffixes: ['born', 'heart', 'soul', 'light'] },
+            'silver': { prefixes: ['Arg', 'Shin', 'Lust', 'Moon'], roots: ['silver', 'shine', 'luster', 'gleam'], suffixes: ['born', 'heart', 'soul', 'light'] },
+            
+            // Concepts & Traits
+            'honor': { prefixes: ['Hon', 'Noble', 'Just', 'Right'], roots: ['honor', 'noble', 'just', 'right'], suffixes: ['born', 'bound', 'heart', 'soul'] },
+            'courage': { prefixes: ['Brav', 'Bold', 'Fear', 'Dare'], roots: ['courage', 'brave', 'bold', 'dare'], suffixes: ['born', 'heart', 'soul', 'spirit'] },
+            'wisdom': { prefixes: ['Wis', 'Sage', 'Know', 'Learn'], roots: ['wisdom', 'sage', 'wise', 'lore'], suffixes: ['born', 'keeper', 'heart', 'mind'] },
+            'strength': { prefixes: ['Might', 'Power', 'Strong', 'Force'], roots: ['strength', 'might', 'power', 'force'], suffixes: ['born', 'heart', 'soul', 'arm'] },
+            'speed': { prefixes: ['Swift', 'Fast', 'Quick', 'Rush'], roots: ['speed', 'swift', 'quick', 'rush'], suffixes: ['born', 'foot', 'heart', 'wind'] },
+            'stealth': { prefixes: ['Sneak', 'Hide', 'Sil', 'Ghost'], roots: ['stealth', 'sneak', 'silent', 'ghost'], suffixes: ['born', 'walker', 'heart', 'step'] },
+            
+            // Tech & Modern
+            'cyber': { prefixes: ['Cyb', 'Digi', 'Net', 'Code'], roots: ['cyber', 'digital', 'net', 'code'], suffixes: ['punk', 'born', 'tech', 'core'] },
+            'neon': { prefixes: ['Neo', 'Glow', 'Bright', 'Shin'], roots: ['neon', 'glow', 'bright', 'shine'], suffixes: ['born', 'light', 'core', 'pulse'] },
+            'matrix': { prefixes: ['Mat', 'Grid', 'Net', 'Sys'], roots: ['matrix', 'grid', 'system', 'network'], suffixes: ['born', 'core', 'node', 'link'] },
+            'robot': { prefixes: ['Bot', 'Mech', 'Auto', 'Droid'], roots: ['robot', 'mech', 'auto', 'droid'], suffixes: ['born', 'core', 'tech', 'mind'] }
+        };
+
+        // Global variables for keyword functionality
+        let userKeywords = [];
+
+        // Generate name function
+        function generateName(category) {
+            const data = nameData[category];
+            const prefix = data.prefixes[Math.floor(Math.random() * data.prefixes.length)];
+            const root = data.roots[Math.floor(Math.random() * data.roots.length)];
+            const suffix = data.suffixes[Math.floor(Math.random() * data.suffixes.length)];
+            
+            if (category === 'clan') {
+                return `${prefix} ${root} ${suffix}`;
+            } else if (category === 'funny') {
+                return `${prefix} ${root}${suffix}`;
+            } else {
+                return prefix + root + suffix;
+            }
+        }
+
+        // Generate keyword-based name
+        function generateKeywordName(keywords) {
+            if (keywords.length === 0) return null;
+            
+            // Choose a random keyword
+            const keyword = keywords[Math.floor(Math.random() * keywords.length)].toLowerCase();
+            
+            // Check if we have mapping for this keyword
+            if (keywordMappings[keyword]) {
+                const mapping = keywordMappings[keyword];
+                const prefix = mapping.prefixes[Math.floor(Math.random() * mapping.prefixes.length)];
+                const root = mapping.roots[Math.floor(Math.random() * mapping.roots.length)];
+                const suffix = mapping.suffixes[Math.floor(Math.random() * mapping.suffixes.length)];
+                
+                // Different naming patterns based on keyword type
+                const patterns = [
+                    `${prefix}${root}`,
+                    `${prefix}${suffix}`,
+                    `${root}${suffix}`,
+                    `${prefix}${root}${suffix}`,
+                    `${root.charAt(0).toUpperCase() + root.slice(1)}${suffix}`,
+                    `${prefix}${root.charAt(0).toUpperCase() + root.slice(1)}`
+                ];
+                
+                return patterns[Math.floor(Math.random() * patterns.length)];
+            } else {
+                // Fallback: use the keyword directly with fantasy elements
+                const fantasyPrefixes = ['Mighty', 'Epic', 'Legend', 'Master', 'Lord', 'Dark', 'Bright', 'Swift'];
+                const fantasySuffixes = ['born', 'heart', 'soul', 'blade', 'fire', 'storm', 'walker', 'keeper'];
+                
+                const prefix = fantasyPrefixes[Math.floor(Math.random() * fantasyPrefixes.length)];
+                const suffix = fantasySuffixes[Math.floor(Math.random() * fantasySuffixes.length)];
+                
+                return `${prefix}${keyword.charAt(0).toUpperCase() + keyword.slice(1)}${suffix}`;
+            }
+        }
+
+        // Generate multiple names
+        function generateNames(category, count = 10) {
+            const names = [];
+            for (let i = 0; i < count; i++) {
+                names.push(generateName(category));
+            }
+            return names;
+        }
+
+        // Generate multiple keyword-based names
+        function generateKeywordNames(keywords, count = 12) {
+            const names = [];
+            for (let i = 0; i < count; i++) {
+                const name = generateKeywordName(keywords);
+                if (name) names.push(name);
+            }
+            return names;
+        }
+
+        // Display names in cards
+        function displayNames(names, container) {
+            container.innerHTML = '';
+            names.forEach(name => {
+                const nameCard = document.createElement('div');
+                nameCard.className = 'name-card glass-effect rounded-xl p-4 text-center cursor-pointer transform transition-all duration-300 hover:scale-105';
+                nameCard.innerHTML = `
+                    <div class="font-bold text-lg mb-2">${name}</div>
+                    <button class="copy-btn text-xs bg-white bg-opacity-20 hover:bg-opacity-30 px-3 py-1 rounded-full transition-all duration-200" data-name="${name}">
+                        Copy
+                    </button>
+                `;
+                container.appendChild(nameCard);
+            });
+        }
+
+        // Add keyword functionality
+        function addKeyword(keyword) {
+            const trimmed = keyword.trim().toLowerCase();
+            if (trimmed && !userKeywords.includes(trimmed) && trimmed.length > 0) {
+                userKeywords.push(trimmed);
+                updateKeywordDisplay();
+                updateGenerateButton();
+                return true;
+            }
+            return false;
+        }
+
+        function removeKeyword(keyword) {
+            const index = userKeywords.indexOf(keyword);
+            if (index > -1) {
+                userKeywords.splice(index, 1);
+                updateKeywordDisplay();
+                updateGenerateButton();
+            }
+        }
+
+        function updateKeywordDisplay() {
+            const container = document.getElementById('keywordTags');
+            container.innerHTML = '';
+            
+            userKeywords.forEach(keyword => {
+                const tag = document.createElement('span');
+                tag.className = 'keyword-tag px-3 py-1 rounded-full text-sm cursor-pointer flex items-center gap-2';
+                tag.innerHTML = `
+                    ${keyword}
+                    <span class="remove-keyword text-red-300 hover:text-red-100 font-bold" data-keyword="${keyword}">&times;</span>
+                `;
+                container.appendChild(tag);
+            });
+        }
+
+        function updateGenerateButton() {
+            const button = document.getElementById('generateKeywordNames');
+            button.disabled = userKeywords.length === 0;
+            button.classList.toggle('opacity-50', userKeywords.length === 0);
+            button.classList.toggle('cursor-not-allowed', userKeywords.length === 0);
+        }
+
+        // Copy to clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Show success feedback
+                const toast = document.createElement('div');
+                toast.className = 'fixed top-4 right-4 bg-secondary text-white px-4 py-2 rounded-lg z-50 animate-fade-in';
+                toast.textContent = 'Copied to clipboard!';
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 2000);
+            });
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const quickGenerate = document.getElementById('quickGenerate');
+            const quickResults = document.getElementById('quickResults');
+            const modal = document.getElementById('generatorModal');
+            const closeModal = document.getElementById('closeModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalResults = document.getElementById('modalResults');
+            const generateMore = document.getElementById('generateMore');
+            const copyAll = document.getElementById('copyAll');
+
+            // Keyword elements
+            const keywordInput = document.getElementById('keywordInput');
+            const addKeywordBtn = document.getElementById('addKeyword');
+            const generateKeywordBtn = document.getElementById('generateKeywordNames');
+            const keywordResults = document.getElementById('keywordResults');
+            const copyKeywordBtn = document.getElementById('copyKeywordNames');
+            const keywordCopySection = document.getElementById('keywordCopySection');
+
+            let currentCategory = 'fantasy';
+
+            // Generate initial names on page load
+            const initialNames = generateNames('fantasy', 5);
+            displayNames(initialNames, quickResults);
+
+            // Initialize keyword button state
+            updateGenerateButton();
+
+            // Quick generate button
+            quickGenerate.addEventListener('click', function() {
+                const categories = Object.keys(nameData);
+                const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+                const names = generateNames(randomCategory, 5);
+                displayNames(names, quickResults);
+            });
+
+            // Keyword input functionality
+            keywordInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const keyword = this.value.trim();
+                    if (addKeyword(keyword)) {
+                        this.value = '';
+                    }
+                }
+            });
+
+            addKeywordBtn.addEventListener('click', function() {
+                const keyword = keywordInput.value.trim();
+                if (addKeyword(keyword)) {
+                    keywordInput.value = '';
+                }
+            });
+
+            // Suggested keywords
+            document.querySelectorAll('.suggested-keyword').forEach(element => {
+                element.addEventListener('click', function() {
+                    addKeyword(this.textContent.trim());
+                });
+            });
+
+            // Remove keyword functionality
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('remove-keyword')) {
+                    const keyword = e.target.dataset.keyword;
+                    removeKeyword(keyword);
+                }
+            });
+
+            // Generate keyword-based names
+            generateKeywordBtn.addEventListener('click', function() {
+                if (userKeywords.length > 0) {
+                    const names = generateKeywordNames(userKeywords, 12);
+                    displayNames(names, keywordResults);
+                    keywordCopySection.classList.remove('hidden');
+                }
+            });
+
+            // Copy all keyword names
+            copyKeywordBtn.addEventListener('click', function() {
+                const nameElements = keywordResults.querySelectorAll('.font-bold');
+                const names = Array.from(nameElements).map(el => el.textContent);
+                if (names.length > 0) {
+                    copyToClipboard(names.join('\n'));
+                }
+            });
+
+            // Category cards
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    currentCategory = this.dataset.category;
+                    const data = nameData[currentCategory];
+                    
+                    modalTitle.textContent = data.title;
+                    modalDescription.textContent = data.description;
+                    
+                    const names = generateNames(currentCategory, 12);
+                    displayNames(names, modalResults);
+                    
+                    modal.classList.remove('hidden');
+                });
+            });
+
+            // Generate more names
+            generateMore.addEventListener('click', function() {
+                const names = generateNames(currentCategory, 12);
+                displayNames(names, modalResults);
+            });
+
+            // Copy all names
+            copyAll.addEventListener('click', function() {
+                const nameElements = modalResults.querySelectorAll('.font-bold');
+                const names = Array.from(nameElements).map(el => el.textContent);
+                copyToClipboard(names.join('\n'));
+            });
+
+            // Close modal
+            closeModal.addEventListener('click', function() {
+                modal.classList.add('hidden');
+            });
+
+            // Close modal on background click
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+
+            // Copy individual names
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('copy-btn')) {
+                    const name = e.target.dataset.name;
+                    copyToClipboard(name);
+                }
+            });
+
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
