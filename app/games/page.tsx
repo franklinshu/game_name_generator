@@ -16,7 +16,7 @@ const allGames = [
     rating: 4.9,
     players: "1-4 Players",
     releaseDate: "2023",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://cdn.akamai.steamstatic.com/steam/apps/1086940/header.jpg",
     platform: ["PC", "PS5", "Xbox"],
   },
   {
@@ -27,7 +27,8 @@ const allGames = [
     rating: 4.8,
     players: "Single Player",
     releaseDate: "2023",
-    image: "/placeholder.svg?height=300&width=400",
+    image:
+      "https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/1c7b75d8ed9271516546560d219ad0b22ee0a263b4537bd8.png",
     platform: ["PS5"],
   },
   {
@@ -38,7 +39,7 @@ const allGames = [
     rating: 4.6,
     players: "Single Player",
     releaseDate: "2023",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://images.ctfassets.net/rporu91m20dc/starfield_header.jpg",
     platform: ["PC", "Xbox"],
   },
   {
@@ -49,7 +50,7 @@ const allGames = [
     rating: 4.7,
     players: "Single Player",
     releaseDate: "2023",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://cdn.remedygames.com/alanwake2/header.jpg",
     platform: ["PC", "PS5", "Xbox"],
   },
   {
@@ -60,7 +61,7 @@ const allGames = [
     rating: 4.8,
     players: "1-4 Players",
     releaseDate: "2023",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://assets.nintendo.com/image/upload/mariowonder/header.jpg",
     platform: ["Switch"],
   },
   {
@@ -71,7 +72,7 @@ const allGames = [
     rating: 4.5,
     players: "Single Player",
     releaseDate: "2023",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://cdn.cdprojektred.com/cyberpunk2077/phantomliberty/header.jpg",
     platform: ["PC", "PS5", "Xbox"],
   },
   {

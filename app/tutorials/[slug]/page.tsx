@@ -1,15 +1,16 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-import { BookOpen, Clock, Users, Star, ArrowLeft, Gamepad2, Bot, Play, Download } from "lucide-react"
+import { BookOpen, Clock, Users, Star, ArrowLeft, Gamepad2, Bot, Play } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 
 const tutorialData = {
   "baldurs-gate-3": {
-    // 保持现有的baldurs-gate-3数据不变
     title: "Baldur's Gate 3 Complete Guide",
     gameTitle: "Baldur's Gate 3",
     description: "Master the art of tactical combat and storytelling in this comprehensive guide",
@@ -19,14 +20,16 @@ const tutorialData = {
     rating: 4.9,
     views: "12.5K",
     lastUpdated: "2 days ago",
-    image: "/placeholder.svg?height=400&width=600",
+    image:
+      "https://cdn.akamai.steamstatic.com/steam/apps/1086940/ss_615455299355eaf552c638c7ea5b24a8b46e02dd.1920x1080.jpg",
     sections_content: [
       {
         title: "Getting Started",
         duration: "5 min",
         content:
           "Learn the basics of character creation and the game interface. Choose your race, class, and background to create the perfect character for your playstyle.",
-        image: "/placeholder.svg?height=300&width=500",
+        image:
+          "https://cdn.akamai.steamstatic.com/steam/apps/1086940/ss_14ca6b05b3ac8b8e8e8e8e8e8e8e8e8e8e8e8e8e.1920x1080.jpg",
         steps: [
           "Launch the game and select 'New Game'",
           "Choose your character's race (Human, Elf, Dwarf, etc.)",
@@ -40,7 +43,8 @@ const tutorialData = {
         duration: "8 min",
         content:
           "Master the turn-based combat system that makes Baldur's Gate 3 unique. Learn positioning, action economy, and spell combinations.",
-        image: "/placeholder.svg?height=300&width=500",
+        image:
+          "https://cdn.akamai.steamstatic.com/steam/apps/1086940/ss_25ca6b05b3ac8b8e8e8e8e8e8e8e8e8e8e8e8e8e.1920x1080.jpg",
         steps: [
           "Understand the initiative order system",
           "Learn about Actions, Bonus Actions, and Movement",
@@ -53,7 +57,8 @@ const tutorialData = {
         title: "Character Development",
         duration: "6 min",
         content: "Build powerful characters through smart leveling choices and equipment optimization.",
-        image: "/placeholder.svg?height=300&width=500",
+        image:
+          "https://cdn.akamai.steamstatic.com/steam/apps/1086940/ss_35ca6b05b3ac8b8e8e8e8e8e8e8e8e8e8e8e8e8e.1920x1080.jpg",
         steps: [
           "Plan your character build from level 1",
           "Choose feats vs ability score improvements",
@@ -66,7 +71,8 @@ const tutorialData = {
         title: "Party Management",
         duration: "7 min",
         content: "Create the perfect party composition and manage relationships between companions.",
-        image: "/placeholder.svg?height=300&width=500",
+        image:
+          "https://cdn.akamai.steamstatic.com/steam/apps/1086940/ss_45ca6b05b3ac8b8e8e8e8e8e8e8e8e8e8e8e8e8e.1920x1080.jpg",
         steps: [
           "Recruit and manage companion characters",
           "Balance party roles (tank, DPS, support, utility)",
@@ -99,13 +105,15 @@ const tutorialData = {
     rating: 4.8,
     views: "8.2K",
     lastUpdated: "1 day ago",
-    image: "/placeholder.svg?height=400&width=600",
+    image:
+      "https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/1c7b75d8ed9271516546560d219ad0b22ee0a263b4537bd8.png",
     sections_content: [
       {
         title: "Web-Swinging Basics",
         duration: "8 min",
         content: "Master the fluid movement system that makes Spider-Man games legendary.",
-        image: "/placeholder.svg?height=300&width=500",
+        image:
+          "https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/2c8b75d8ed9271516546560d219ad0b22ee0a263b4537bd9.png",
         steps: [
           "Learn basic web-swinging controls",
           "Understand momentum and physics",
@@ -118,7 +126,8 @@ const tutorialData = {
         title: "Combat System",
         duration: "10 min",
         content: "Learn the dynamic combat system with both Peter and Miles.",
-        image: "/placeholder.svg?height=300&width=500",
+        image:
+          "https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/3c8b75d8ed9271516546560d219ad0b22ee0a263b4537bd9.png",
         steps: [
           "Master basic attack combinations",
           "Learn dodge timing and counters",
@@ -131,7 +140,8 @@ const tutorialData = {
         title: "Character Switching",
         duration: "5 min",
         content: "Learn when and how to switch between Peter Parker and Miles Morales.",
-        image: "/placeholder.svg?height=300&width=500",
+        image:
+          "https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/4c8b75d8ed9271516546560d219ad0b22ee0a263b4537bd9.png",
         steps: [
           "Understand each character's strengths",
           "Learn optimal switching timing",
@@ -144,7 +154,8 @@ const tutorialData = {
         title: "Suit Powers & Gadgets",
         duration: "7 min",
         content: "Unlock and master the various suits and gadgets available.",
-        image: "/placeholder.svg?height=300&width=500",
+        image:
+          "https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/5c8b75d8ed9271516546560d219ad0b22ee0a263b4537bd9.png",
         steps: [
           "Unlock new suits and abilities",
           "Understand suit power synergies",
@@ -177,13 +188,13 @@ const tutorialData = {
     rating: 4.6,
     views: "15.3K",
     lastUpdated: "3 days ago",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "https://images.ctfassets.net/rporu91m20dc/starfield_screenshot_1.jpg",
     sections_content: [
       {
         title: "Character Creation & Skills",
         duration: "8 min",
         content: "Create the perfect space explorer and understand the skill system.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://images.ctfassets.net/rporu91m20dc/starfield_character_creation.jpg",
         steps: [
           "Choose your background and traits",
           "Understand the skill tree system",
@@ -196,7 +207,7 @@ const tutorialData = {
         title: "Space Combat & Ship Building",
         duration: "12 min",
         content: "Master space combat and create powerful custom ships.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://images.ctfassets.net/rporu91m20dc/starfield_ship_building.jpg",
         steps: [
           "Learn basic space combat controls",
           "Understand ship systems and power management",
@@ -209,7 +220,7 @@ const tutorialData = {
         title: "Planet Exploration",
         duration: "10 min",
         content: "Explore diverse planets and manage resources effectively.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://images.ctfassets.net/rporu91m20dc/starfield_planet_exploration.jpg",
         steps: [
           "Use the scanner to find resources",
           "Understand biome types and hazards",
@@ -222,7 +233,7 @@ const tutorialData = {
         title: "Faction Questlines",
         duration: "12 min",
         content: "Navigate the complex political landscape of the settled systems.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://images.ctfassets.net/rporu91m20dc/starfield_factions.jpg",
         steps: [
           "Join major factions",
           "Understand faction relationships",
@@ -255,13 +266,13 @@ const tutorialData = {
     rating: 4.7,
     views: "6.8K",
     lastUpdated: "5 days ago",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "https://cdn.remedygames.com/alanwake2/screenshot_darkplace.jpg",
     sections_content: [
       {
         title: "Understanding the Dark Place",
         duration: "8 min",
         content: "Navigate the twisted reality of the Dark Place and understand its rules.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://cdn.remedygames.com/alanwake2/dark_place_tutorial.jpg",
         steps: [
           "Understand light and shadow mechanics",
           "Learn to navigate shifting environments",
@@ -274,7 +285,7 @@ const tutorialData = {
         title: "Dual Character Gameplay",
         duration: "10 min",
         content: "Master playing as both Alan Wake and Saga Anderson.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://cdn.remedygames.com/alanwake2/dual_character.jpg",
         steps: [
           "Understand each character's abilities",
           "Learn investigation mechanics as Saga",
@@ -287,7 +298,7 @@ const tutorialData = {
         title: "Combat and Survival",
         duration: "8 min",
         content: "Survive encounters with the Taken and other dark entities.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://cdn.remedygames.com/alanwake2/combat_tutorial.jpg",
         steps: [
           "Master light-based combat",
           "Conserve ammunition and batteries",
@@ -300,7 +311,7 @@ const tutorialData = {
         title: "Puzzle Solving",
         duration: "10 min",
         content: "Solve complex environmental and narrative puzzles.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://cdn.remedygames.com/alanwake2/puzzle_solving.jpg",
         steps: [
           "Use the Mind Place effectively",
           "Connect clues and evidence",
@@ -333,13 +344,13 @@ const tutorialData = {
     rating: 4.8,
     views: "11.7K",
     lastUpdated: "1 day ago",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "https://assets.nintendo.com/image/upload/mariowonder/screenshot_wonder_effect.jpg",
     sections_content: [
       {
         title: "Wonder Effects Mastery",
         duration: "8 min",
         content: "Understand and master the game-changing Wonder Effects.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://assets.nintendo.com/image/upload/mariowonder/wonder_effects_tutorial.jpg",
         steps: [
           "Collect Wonder Flowers to trigger effects",
           "Adapt to changing level mechanics",
@@ -352,7 +363,7 @@ const tutorialData = {
         title: "Character Selection",
         duration: "6 min",
         content: "Choose the right character for each level and situation.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://assets.nintendo.com/image/upload/mariowonder/character_selection.jpg",
         steps: [
           "Understand each character's abilities",
           "Learn Mario's balanced gameplay",
@@ -365,7 +376,7 @@ const tutorialData = {
         title: "Collectibles and Secrets",
         duration: "10 min",
         content: "Find all Wonder Seeds, coins, and hidden areas.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://assets.nintendo.com/image/upload/mariowonder/collectibles_guide.jpg",
         steps: [
           "Locate all Wonder Seeds in levels",
           "Find hidden coin caches",
@@ -378,7 +389,7 @@ const tutorialData = {
         title: "Multiplayer Strategies",
         duration: "6 min",
         content: "Coordinate with friends in cooperative gameplay.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://assets.nintendo.com/image/upload/mariowonder/multiplayer_tutorial.jpg",
         steps: [
           "Coordinate character selection",
           "Help teammates with abilities",
@@ -411,13 +422,13 @@ const tutorialData = {
     rating: 4.5,
     views: "9.4K",
     lastUpdated: "4 days ago",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "https://cdn.cdprojektred.com/cyberpunk2077/phantomliberty/dogtown_vista.jpg",
     sections_content: [
       {
         title: "New Dogtown District",
         duration: "8 min",
         content: "Explore the dangerous new area and understand its unique challenges.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://cdn.cdprojektred.com/cyberpunk2077/phantomliberty/dogtown_tutorial.jpg",
         steps: [
           "Navigate Dogtown's hostile environment",
           "Understand faction territories",
@@ -430,7 +441,7 @@ const tutorialData = {
         title: "Spy Thriller Mechanics",
         duration: "10 min",
         content: "Master the espionage elements and stealth gameplay.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://cdn.cdprojektred.com/cyberpunk2077/phantomliberty/spy_mechanics.jpg",
         steps: [
           "Use stealth and infiltration tactics",
           "Gather intelligence effectively",
@@ -443,7 +454,7 @@ const tutorialData = {
         title: "New Cyberware and Abilities",
         duration: "12 min",
         content: "Utilize the expanded cybernetic enhancement system.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://cdn.cdprojektred.com/cyberpunk2077/phantomliberty/cyberware_tutorial.jpg",
         steps: [
           "Install and upgrade new cyberware",
           "Master relic abilities",
@@ -456,7 +467,7 @@ const tutorialData = {
         title: "Vehicle Combat and Chases",
         duration: "8 min",
         content: "Master the improved vehicle combat system.",
-        image: "/placeholder.svg?height=300&width=500",
+        image: "https://cdn.cdprojektred.com/cyberpunk2077/phantomliberty/vehicle_combat.jpg",
         steps: [
           "Handle high-speed chases",
           "Use vehicle weapons effectively",
@@ -492,6 +503,13 @@ export default function TutorialPage({ params }: TutorialPageProps) {
 
   if (!tutorial) {
     notFound()
+  }
+
+  const handleStartTutorial = () => {
+    const firstSection = document.querySelector('[data-section="0"]')
+    if (firstSection) {
+      firstSection.scrollIntoView({ behavior: "smooth" })
+    }
   }
 
   return (
@@ -592,13 +610,9 @@ export default function TutorialPage({ params }: TutorialPageProps) {
                   <CardTitle>Quick Actions</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <Button className="w-full">
+                  <Button className="w-full" onClick={handleStartTutorial}>
                     <Play className="h-4 w-4 mr-2" />
                     Start Tutorial
-                  </Button>
-                  <Button variant="outline" className="w-full bg-transparent">
-                    <Download className="h-4 w-4 mr-2" />
-                    Download PDF
                   </Button>
                   <Button variant="outline" className="w-full bg-transparent">
                     <BookOpen className="h-4 w-4 mr-2" />
@@ -637,7 +651,7 @@ export default function TutorialPage({ params }: TutorialPageProps) {
           <h2 className="text-2xl font-bold mb-8">Tutorial Sections</h2>
           <div className="space-y-8">
             {tutorial.sections_content.map((section, index) => (
-              <Card key={index}>
+              <Card key={index} data-section={index}>
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <CardTitle className="flex items-center space-x-2">
@@ -717,7 +731,7 @@ export default function TutorialPage({ params }: TutorialPageProps) {
                 </div>
                 <Progress value={0} className="h-2" />
                 <div className="flex space-x-2">
-                  <Button>
+                  <Button onClick={handleStartTutorial}>
                     <Play className="h-4 w-4 mr-2" />
                     Start Learning
                   </Button>
