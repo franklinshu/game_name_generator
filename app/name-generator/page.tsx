@@ -65,26 +65,80 @@ export default function NameGeneratorPage() {
   const generateNames = async () => {
     setIsGenerating(true)
 
-    // Simulate AI generation with realistic delay
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    try {
+      // Simulate AI generation with realistic delay
+      await new Promise((resolve) => setTimeout(resolve, 2000))
 
-    const newNames = [
-      `${selectedStyle || "Epic"} ${keywords || "Adventure"} ${Math.floor(Math.random() * 1000)}`,
-      `${keywords || "Shadow"} ${selectedGenre || "Quest"}`,
-      `${selectedStyle || "Mystic"} ${keywords || "Legends"}: The ${selectedGenre || "Chronicles"}`,
-      `${keywords || "Cyber"} ${selectedStyle || "Storm"}`,
-      `The ${selectedStyle || "Lost"} ${keywords || "Kingdom"} of ${selectedGenre || "Eternity"}`,
-      `${keywords || "Dragon"} ${selectedStyle || "Fire"}: ${selectedGenre || "Awakening"}`,
-      `${selectedStyle || "Phantom"} ${keywords || "Blade"} ${selectedGenre || "Saga"}`,
-      `${keywords || "Crystal"} ${selectedStyle || "Destiny"}`,
-    ]
+      const baseNames = [
+        "Shadow",
+        "Mystic",
+        "Cyber",
+        "Dragon",
+        "Crystal",
+        "Phantom",
+        "Steel",
+        "Neon",
+        "Quantum",
+        "Crimson",
+      ]
 
-    setGeneratedNames(newNames)
-    setIsGenerating(false)
+      const suffixes = [
+        "Chronicles",
+        "Legacy",
+        "Destiny",
+        "Awakening",
+        "Revolution",
+        "Saga",
+        "Quest",
+        "Legends",
+        "Empire",
+        "Realms",
+      ]
+
+      const newNames = []
+      for (let i = 0; i < 8; i++) {
+        const baseName = baseNames[Math.floor(Math.random() * baseNames.length)]
+        const suffix = suffixes[Math.floor(Math.random() * suffixes.length)]
+        const style = selectedStyle || gameStyles[Math.floor(Math.random() * gameStyles.length)]
+        const keyword = keywords ? keywords.split(",")[0]?.trim() : ""
+
+        let generatedName = ""
+        if (keyword && Math.random() > 0.5) {
+          generatedName = `${keyword} ${suffix}`
+        } else if (selectedGenre && Math.random() > 0.3) {
+          generatedName = `${style} ${selectedGenre}: ${baseName} ${suffix}`
+        } else {
+          generatedName = `${baseName} ${suffix}`
+        }
+
+        newNames.push(generatedName)
+      }
+
+      setGeneratedNames(newNames)
+    } catch (error) {
+      console.error("Error generating names:", error)
+      // Fallback names
+      setGeneratedNames([
+        "Epic Adventure Quest",
+        "Mystic Dragon Saga",
+        "Cyber Steel Chronicles",
+        "Shadow Realm Legends",
+        "Crystal Destiny Empire",
+        "Phantom Legacy Quest",
+        "Neon Future Wars",
+        "Quantum Space Odyssey",
+      ])
+    } finally {
+      setIsGenerating(false)
+    }
   }
 
-  const copyToClipboard = (name: string) => {
-    navigator.clipboard.writeText(name)
+  const copyToClipboard = async (name: string) => {
+    try {
+      await navigator.clipboard.writeText(name)
+    } catch (error) {
+      console.error("Failed to copy:", error)
+    }
   }
 
   return (
